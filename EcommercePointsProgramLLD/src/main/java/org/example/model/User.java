@@ -1,5 +1,10 @@
 package org.example.model;
 
+import org.example.service.BronzeLevelService;
+import org.example.service.GoldLevelService;
+import org.example.service.LevelService;
+import org.example.service.SilverLevelService;
+
 public class User {
     String userId;
     String name;

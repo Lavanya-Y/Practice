@@ -1,5 +1,7 @@
 package org.example.service;
 
+import org.example.model.User;
+
 public class PurchaseService {
     OrderService orderService;
     UserService userService;
