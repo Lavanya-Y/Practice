@@ -40,6 +40,13 @@ public class InventoryService {
         }
     }
 
+    public void updateInventory(List<Item> items) throws Exception {
+        for (Item item: items) {
+            Product product = this.getProduct(item.getProduct().getName());
+            product.setQuantity(product.getQuantity()- item.getQuantity());
+        }
+    }
+
     public Product getProduct(String product) {
         return inventory.stream().filter(pro -> pro.getName().equals(product)).findFirst().orElse(null);
     }

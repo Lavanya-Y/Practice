@@ -40,6 +40,7 @@ public class OrderService {
             if (paid) {
                 Order order = new Order(orderId, username, orderAmount, items, paymentType, curTimeStamp);
                 orders.put(orderId, order);
+                inventoryService.updateInventory(items);
                 System.out.println("Order successful for username: " + username + ", orderId: " + orderId + ", orderAmount: " + orderAmount + ", paymentType: " + paymentType);
             } else {
                 System.out.println("Order unsuccessful for username: " + username + ", orderId: " + orderId + ", orderAmount: " + orderAmount + ", paymentType: " + paymentType);

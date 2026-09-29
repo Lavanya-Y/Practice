@@ -21,7 +21,6 @@ public class Main {
         userService.registerUser("user1", 5000.0);
         userService.registerUser("user2", 5000.0);
 
-//        System.out.println("DueService in Main: " + dueService);
 
         inventoryService.seedInventory(List.of(
                 new Product("headphones", 2000.0, 50),

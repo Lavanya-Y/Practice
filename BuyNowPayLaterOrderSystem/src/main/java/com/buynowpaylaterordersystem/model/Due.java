@@ -1,7 +1,6 @@
 package com.buynowpaylaterordersystem.model;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class Due {
     String orderId;

@@ -9,7 +9,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class DueService {
@@ -40,25 +39,6 @@ public class DueService {
     }
 
     public void viewDues(String username, LocalDateTime dateTime) {
-//        System.out.println("DueService in viewDues: " + this);
-//        for (Map.Entry<String, Order> entry : orderService.orders.entrySet()) {
-//            String orderId = entry.getKey();
-//            Order order = entry.getValue();
-//
-//            System.out.println("Order ID: " + orderId
-//                    + ", Order: " + order
-//                    + ", OrderId: " + order.getOrderId()
-//                    + ", Username: " + order.getUsername());
-//        }
-//        for (Map.Entry<String, Due> entry : dues.entrySet()) {
-//            String orderId = entry.getKey();
-//            Due order = entry.getValue();
-//
-//            System.out.println("Due Order ID: " + orderId
-//                    + ", Due OrderId: " + order.getOrderId()
-//                    + ", Due Status: " + order.getDueStatus());
-//        }
-//        System.out.println("username: " + username + ", orders: " + orderService.orders);
         List<Due> filteredDues = dues.values().stream()
                 .filter(map -> (map.getDueStatus() == DUE_STATUS.PENDING || map.getDueStatus() == DUE_STATUS.DELAYED))
                 .filter(due -> (due.getDueCreatedTs().toLocalDate().isEqual(dateTime.toLocalDate())))
